@@ -1,0 +1,33 @@
+.headerBody {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  height: 60px;
+  padding: 0 136px;
+
+  background-color: var(--color-dark-500);
+}
+
+.headerLogo {
+  width: 156.48px;
+  height: 36px;
+}
+
+.headerProfile {
+  display: flex;
+  align-items: center;
+}
+
+.profileName {
+  margin-right: 14px;
+  font-weight: var(--font-weight-bold);
+  border-bottom: 2px dashed var(--color-light-100);
+}
+
+.profileIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}

@@ -1,0 +1,106 @@
+.personalInfoWrapper {
+  display: flex;
+  flex-direction: column;
+
+  width: 26.25rem;
+  margin: 2.25rem auto 0;
+  padding: 2.062rem 2.25rem 2.562rem;
+
+  .title {
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .avatar {
+    width: 6rem;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .name {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .infoContainer {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+
+    .editNameWrapper {
+      display: flex;
+      gap: 0.3rem;
+      align-items: center;
+      align-self: center;
+      justify-content: center;
+
+      .editNameIcon {
+        cursor: pointer;
+      }
+    }
+
+    .email {
+      color: var(--color-dark-100);
+      text-align: center;
+    }
+
+    .buttonLogOut {
+      align-self: center;
+      box-sizing: border-box;
+    }
+  }
+
+  .changeAvatar {
+    position: relative;
+    width: 100%;
+
+    .addPhotoBtn {
+      cursor: pointer;
+
+      position: absolute;
+      z-index: 2;
+      top: -2.3rem;
+      left: 55%;
+
+      display: -webkit-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 1.5rem;
+      height: 1.5rem;
+      margin: 0 auto;
+
+      background: var(--color-dark-300);
+      border-radius: 0.25rem;
+    }
+
+    .inputIcon {
+      width: 1rem;
+    }
+
+    .inputFile {
+      display: none;
+    }
+  }
+
+  .input {
+    width: 100%;
+  }
+
+  .errorMessage {
+    margin-top: 5px;
+
+    font-size: 0.75rem;
+    line-height: 1.5rem;
+    color: var(--color-danger-300);
+    text-align: center;
+  }
+}

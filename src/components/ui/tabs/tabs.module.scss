@@ -1,0 +1,61 @@
+/* reset */
+button,
+fieldset,
+input {
+  all: unset;
+}
+
+.tabsRoot {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.tabsList {
+  display: flex;
+  border: 1px solid var(--color-dark-300);
+  border-radius: 2px;
+}
+
+.tabsTrigger {
+  cursor: pointer;
+  user-select: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 45px;
+  padding: 0 20px;
+
+  font-size: var(--font-size-m);
+  line-height: var(--line-height-m);
+  color: var(--color-light-100);
+
+  background-color: inherit;
+
+  &:first-child {
+    border-top-left-radius: 1px;
+    border-bottom-left-radius: 1px;
+  }
+
+  &:last-child {
+    border-top-right-radius: 1px;
+    border-bottom-right-radius: 1px;
+  }
+
+  &:hover {
+    color: var(--color-light-900);
+    background-color: var(--color-dark-100);
+  }
+
+  &:disabled {
+    cursor: default;
+    color: var(--color-dark-100);
+    background-color: var(--color-dark-500);
+  }
+
+  &[data-state='active'] {
+    color: var(--color-light-100);
+    background-color: var(--color-accent-500);
+  }
+}

@@ -1,0 +1,28 @@
+.checkEmailContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+
+  width: 26.25rem;
+  margin: 2.25rem auto 0;
+  padding: 2.06rem 2.25rem 1.81rem;
+}
+
+.header {
+  text-align: center;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+}
+
+.info {
+  line-height: 25px;
+  color: var(--color-dark-100);
+  text-align: center;
+}
+
+.button {
+  margin-top: 2rem;
+}

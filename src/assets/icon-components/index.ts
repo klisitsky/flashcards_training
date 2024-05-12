@@ -1,0 +1,7 @@
+export * from './arrow-down-icon'
+export * from './arrow-up-icon'
+export * from './delete-icon'
+export * from './edit-icon'
+export * from './email-icon'
+export * from './pencil-icon'
+export * from './play-circle-icon'
