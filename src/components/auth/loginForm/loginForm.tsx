@@ -1,48 +1,33 @@
-import { useController, useForm } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 
-import { Button, CheckboxComponent, TextField } from '@/components'
+import { Button } from '@/components'
+import { FormCheckbox } from '@/components/ui/controlled/form-checkbox/form-checkbox'
+import FormTextField from '@/components/ui/controlled/form-textField/form-textField'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 
+const loginSchema = z.object({
+  email: z.string().email(),
+  password: z.string().min(3),
+  rememberMe: z.boolean().default(false),
+})
+
+export type FormValues = z.infer<typeof loginSchema>
+
 export const LoginForm = () => {
-  const loginSchema = z.object({
-    email: z.string().email(),
-    password: z.string().min(3),
-    rememberMe: z.boolean().default(false),
-  })
-
-  type FormValues = z.infer<typeof loginSchema>
-
-  const {
-    control,
-    formState: { errors },
-    handleSubmit,
-    register,
-  } = useForm<FormValues>({
+  const { control, handleSubmit } = useForm<FormValues>({
     resolver: zodResolver(loginSchema),
   })
 
   const onSubmit = (data: FormValues) => {
-    // ... submit ...
+    console.log(data)
   }
-
-  const {
-    field: { onChange, value },
-  } = useController({
-    control,
-    defaultValue: false,
-    name: 'rememberMe',
-  })
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <TextField {...register('email')} errorMessage={errors.email?.message} label={'email'} />
-      <TextField
-        {...register('password')}
-        errorMessage={errors.password?.message}
-        label={'password'}
-      />
-      <CheckboxComponent checked={value} label={'rememberMe'} onCheckedHandler={onChange} />
+      <FormTextField control={control} label={'email'} name={'email'} />
+      <FormTextField control={control} label={'password'} name={'password'} />
+      <FormCheckbox control={control} label={'remember Me'} name={'rememberMe'} />
       <Button type={'submit'}>Submit</Button>
     </form>
   )
